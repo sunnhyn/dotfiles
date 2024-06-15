@@ -1,0 +1,23 @@
+[alias]
+    cm = commit -m
+    lg = log --oneline
+    sw = switch
+    ri = rebase -i
+    l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+    fo = fetch origin
+    pu = push origin
+    cp = cherry-pick
+    cpa = cherry-pick --abort
+    cpc = cherry-pick --continue
+    rbc = rebase --continue
+    rba = rebase --abort
+    gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
+    cma = commit --amend
+    swhard = "!f() { git branch -D $1 && git fetch origin $1 && git sw $1; }; f"
+    rbo = "!f() { git fetch origin $1 && git rebase origin/$1; }; f"
+    bl = branch --sort=-committerdate --format='%(HEAD) %(refname:short) - %(color:green)(%(committerdate:relative))%(color:reset)%(color:blue)<%(authorname)>%(color:reset)'
+    s = status
+    undo = reset HEAD~
+    co = "!git bl | fzf --reverse --ansi | awk '{print $1}' | xargs git sw"
+    cmf = "!git l | fzf --reverse --ansi | awk '{ print $2 }' | xargs git commit --fixup"
+    ap = "!git ls-files -m | fzf --reverse | awk '{ print $1 }' | xargs git add -p"%   
