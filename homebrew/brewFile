@@ -1,0 +1,36 @@
+# 'brew tap'
+tap "homebrew/cask"
+
+# brew
+brew "fzf"
+brew "jq"
+brew "mas"
+brew "mkcert"
+brew "node@20"
+brew "python@3.12"
+brew "yarn"
+brew "sqlite"
+brew "pnpm"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+
+# cask
+cask "1password"
+cask "google-chrome"
+cask "keka"
+cask "visual-studio-code"
+cask "android-studio"
+cask "hiddenbar"
+cask "raycast"
+cask "docker"
+cask "itsycal"
+cask "tableplus"
+cask "firefox"
+cask "karabiner-elements"
+cask "transmission"
+
+# mas
+mas "KakaoTalk", id: 869223134
+mas "RunCat", id: 1429033973
+mas "Xcode", id: 497799835
+mas "Magnet", id: 441258766
